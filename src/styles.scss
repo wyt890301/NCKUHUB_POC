@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+$primary-font:'Noto Sans', helvetica, Microsoft JhengHei, serif, sans-serif, monospace;
+$background-color: #fafafa;
+$font-color:#616161;
+
+body {
+  margin: 0;
+  background-color: $background-color;
+}
+
+* {
+  font-family:$primary-font;
+  color: $font-color;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-weight: lighter;
+}
+
+a {
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+input {
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #BDBDBD;
+}
+
+/* Button */
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+
+  &:hover{
+    opacity: 0.8;
+    font-weight: normal;
+  }
+
+  &:disabled{
+    opacity: 0.5;
+    cursor: auto;
+  }
+}

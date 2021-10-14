@@ -1,0 +1,69 @@
+.course_div{
+  overflow-y: auto;
+  height: 586px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0px 14px 2px;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    margin-top:-20px;
+    margin-left: -40px;
+
+    li{
+      margin-bottom: -14px;
+      background-color:white;
+      list-style: none;
+
+      &:hover{
+        background-color: #eaeaf342;
+      }
+    }
+  }
+
+  .course_circle{
+    float: left;
+    height: 45px;
+    width: 45px;
+    background-color:#f35a5a;
+    margin: 10px 20px 0px 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+
+    p{
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+  .course_add{
+    float: right;
+    width: 60px;
+    padding-right: 20px;
+    padding-top: 4px;
+  }
+}
+
+.course_name {
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  padding-top:10px;
+  padding-left: 15px;
+}
+
+.course_teacher{
+  cursor: pointer;
+  color: #cc917d;
+  font-size: 12px;
+  padding-bottom:10px;
+  padding-left: 15px;
+  margin-top: -10px;
+}
+
+
+
+

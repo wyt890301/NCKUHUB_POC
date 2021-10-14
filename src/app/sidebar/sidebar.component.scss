@@ -1,0 +1,53 @@
+.sidebar{
+    height: 100%;
+
+    .sidebar-title{
+        & > p {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            font-size:18px;
+            font-weight: 600;
+
+            &::after {
+                position: absolute;
+                display: inline-block;
+                content: "";
+                top: 50%;
+                margin-left: 10px;
+                height: 1px;
+                width: 100%;
+                background: gray;
+            }
+        }
+    }
+
+    .sidebar-div{
+        background-color: white;
+        margin-top:-10px;
+        box-shadow: rgba(0,0,0,0.10) 0px 0px 14px 2px;
+    
+        p{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+    }
+    
+    // 需修改地方
+    .sidebar-div2{
+        @extend .sidebar-div;
+        display:flex;
+        height: 74%;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .sidebar-div3{
+        @extend .sidebar-div;
+        display:flex;
+        margin-top:10px;
+    }
+}
+
+

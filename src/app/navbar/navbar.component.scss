@@ -1,0 +1,82 @@
+.navbar {
+    max-height: 100px;
+    width: 100%;
+
+    .header-div {
+        float:left;
+        align-items: center;
+    }
+    
+    .search-div {
+        float:left;
+        padding-top: 22px;
+        padding-left:40px;
+        display: flex;
+    }
+
+    a {
+        cursor: pointer;
+        color: #17abd6;
+        text-decoration: none;
+        display: flex;
+    }
+
+    h1 {
+        color: white;
+        font-size: 20px;
+        padding-top: 12px;
+        display: flex;
+    }
+
+    .logo_icon {
+        padding-top: 0px;
+        width: 80px;
+    }
+
+    .search_icon{
+        height:33px;
+        margin-right:-40px;
+        z-index:2;
+    }
+
+    input {
+        background-color:#68c0e0;
+        width: 500px;
+        padding-left:45px;
+        z-index:1;
+
+        /* 搜尋欄字為白色 */
+        &::placeholder { 
+            color: white;
+        }
+
+        &::-webkit-search-cancel-button{
+            display: none;
+        }
+
+        /* 點擊不會有黑框、輸入字為白色 */
+        &:focus{
+            color: white; 
+            outline: none;
+        }
+    }
+
+    .right_area{
+        float:right;
+        margin-right: 5%;
+        margin-top: 25px;
+
+        .navbar_link{
+            display: inline-block;
+            width: 70px;
+            color:white;
+            vertical-align: middle;
+        }
+        
+        .navbar_profile{
+            width: 30px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+    }
+}

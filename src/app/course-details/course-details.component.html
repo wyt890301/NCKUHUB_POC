@@ -1,0 +1,9 @@
+<h2>Course Details</h2>
+
+<div class="details_div" *ngIf="course">
+  <h3>{{ course.name }} - {{ course.teacher}}</h3>
+  <p>{{ course.description }}</p><br><br>
+
+  <button (click)= "addToFavorite(course)">加入願望清單</button>
+
+</div>
