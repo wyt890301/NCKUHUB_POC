@@ -37,10 +37,10 @@
     // 需修改地方
     .sidebar-div2{
         @extend .sidebar-div;
-        display:flex;
-        height: 74%;
+        height: 280px;
         flex-direction: row;
-        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .sidebar-div3{

@@ -4,26 +4,39 @@
 <div class="course_div">
     <ul>
         <li *ngFor="let course of courses">
+            <!-- (click)="openCourse=true" -->
+            <div class="course_all">
+                <div class="course_circle">
+                    <p>{{ course.dept_name.substring(0,1) }}</p>
+                </div>
 
-            <!-- <p class="course_circle"></p> -->
-            <div class="course_circle">
-                <p>{{ course.dept_name.substring(0,1) }}</p>
+                <!-- 課程名稱+教授 -->
+                <p class="course_name">
+                    <!-- []為屬性繫結，可以為產品標題加上屬性 -->
+                    <a routerLink="['/courses', course.id]">
+                        {{ course.dept_code }}-{{ course.serial }} {{course.course_name}}
+                    </a>
+
+                    <!-- 加入願望清單icon -->
+                    <img class="course_add" src="../../images/heart.svg" (click)="addToFavorite(course)">  
+                </p>
+
+                <p class="course_teacher">
+                    {{course.dept_name}} — {{course.teacher}} — {{course.time}}
+                </p>
             </div>
 
-            <!-- 課程名稱+教授 -->
-            <p class="course_name">
-                <!-- []為屬性繫結，可以為產品標題加上屬性 -->
-                <a routerLink="['/courses', course.id]">
-                    {{ course.dept_code }}-{{ course.serial }} {{course.course_name}}
-                </a>
-
-                <!-- 加入願望清單icon -->
-                <img class="course_add" src="../../images/heart.svg">  
-            </p>
-
-            <p class="course_teacher">
-                {{course.dept_name}} — {{course.teacher}} — {{course.time}}
-            </p>
+            <!-- <window class="course_details" *ngIf="openCourse==true">
+                <div class="course_details__left_area">
+                  <div class="course_details__left_area__serial">
+                    <a>{{ course.dept_code }}{{ course.serial }}</a>
+                  </div>
+                  <h3>{{ course.course_name }}</h3>
+                  
+                  <p>{{ course.description }}</p><br><br>
+                </div>
+            </window> -->
         </li>
     </ul>
 </div>
+

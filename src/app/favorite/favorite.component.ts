@@ -8,11 +8,16 @@ import { FavoriteService } from '../favorite.service';
 })
 
 export class FavoriteComponent{
-
-  courses = this.FavoriteService.getFavorite();
-  
   // 注入FavoriteService  
   constructor(
-    private FavoriteService: FavoriteService
+    private favoriteService: FavoriteService,
   ) { }
+
+  changeText: boolean = false;  // 判斷是否有mouseover
+  courses = this.favoriteService.getFavorite(); // 取得favorite_course
+
+  deleteFavorite(courseId: number) {
+    this.favoriteService.deleteFavorite(courseId);
+    this.courses = this.favoriteService.getFavorite();
+  }
 }

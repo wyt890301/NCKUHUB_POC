@@ -71,6 +71,10 @@
             width: 70px;
             color:white;
             vertical-align: middle;
+
+            &:hover{
+                font-weight: bold;
+            }
         }
         
         .navbar_profile{

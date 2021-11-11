@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { course_example } from './data';
 import { HttpClient } from '@angular/common/http'; // 呼應http請求
+import { course } from './model';
+
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 // @Injectable() 裝飾器指定 Angular 可以在 DI 體系中使用此類別
 @Injectable({
@@ -10,26 +13,28 @@ import { HttpClient } from '@angular/common/http'; // 呼應http請求
 
 export class FavoriteService {
 
-  //定義一個 items 屬性來把當前商品的陣列儲存在購物車中
-  items: typeof course_example[] = [];
-  
+  //定義一個 可以存放目前 favoriteCourses的陣列
+  favoriteCourses: course[] = [];
+  private url = "http://localhost:3000"
+
   constructor(
     private http: HttpClient
   ) {}
 
-  // 新增
-  addToFavorite(course: typeof course_example) {
-    this.items.push(course);
-  }
+  // 新增課程至favoriteCourse
+  addToFavorite(course: course) {
+    return this.favoriteCourses.push(course);
+  } 
 
-  // 返回
+    
+  // 查詢favoriteCourse
   getFavorite() {
-    return this.items;
+    return this.favoriteCourses;
   }
 
-  // 刪除
-  clearFavorite() {
-    this.items = [];
-    return this.items;
+  // 移除favoriteCourse
+  deleteFavorite(courseId: number) {
+    this.favoriteCourses = this.favoriteCourses.filter(course => course.id != courseId);
+    return this.favoriteCourses
   }
 }

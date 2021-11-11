@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { course } from '../model';
-// import { CourseService } from '../course.service';
+import { FavoriteService } from '../favorite.service';
 
 @Component({
   selector: 'app-course-list',
@@ -10,14 +10,19 @@ import { course } from '../model';
 })
 
 export class CourseListComponent implements OnInit{
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private favoriteService: FavoriteService
+  ) {}
+
+  openCourse: boolean = false;
 
   // public courses: Array<course> = new Array<course>();
   public courses: course[] = [];
   private url = 'https://nckuhub.com/course';
 
-  // 目前問題：api得到的json有中文當key的資料，目前angular無支援，所以必須將res.body.courses中
-  // 有中文的部分重新組成array
+  // 目前問題：api得到的json有中文當key的資料，目前angular無支援，
+  // 所以必須將res.body.courses中，有中文的部分重新組成array
   getCourses(): void {
 
     //可以得到API的http狀態碼
@@ -45,29 +50,15 @@ export class CourseListComponent implements OnInit{
         console.log("ERROR: API nckuhub http code is " + res.status);
       }
     });
-
   }
 
   ngOnInit(): void {
     this.getCourses();
+    console.log("ngOnInit start!")
   }
-
+  
+  // 呼叫favoriteService
+  addToFavorite(course: course) {
+    this.favoriteService.addToFavorite(course)
+  }
 }
-
-
-// export class CourseListComponent implements OnInit{
-//   constructor(private CourseService: CourseService) { }
-
-//   // 陣列內每個元素都符好原先設定好的interface
-//   courses: course[] = [];
-
-//   ngOnInit() {
-//     this.getCourses();
-//   }
-
-//   getCourses(): void {
-//     this.CourseService.getCourses()
-//     .subscribe(courses => this.courses = courses);
-//   }
-
-// }

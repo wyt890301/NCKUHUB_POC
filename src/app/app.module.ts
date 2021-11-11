@@ -5,13 +5,11 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './navbar/navbar.component';
 import { SideBarComponent } from './sidebar/sidebar.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
-import { CourseAddComponent } from './course-add/course-add.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
@@ -30,7 +28,6 @@ import { FavoriteComponent } from './favorite/favorite.component';
     SideBarComponent,
     CourseListComponent,
     CourseDetailsComponent,
-    CourseAddComponent,
     FavoriteComponent
   ],
   bootstrap: [

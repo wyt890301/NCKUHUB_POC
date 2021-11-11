@@ -1,8 +1,27 @@
-<p *ngIf="courses.length == 0">尚未新增任何課程</p>
+<div class="favorite_div">
+  <p class="empty" *ngIf="courses.length == 0">尚未新增任何課程</p>
 
-<ul *ngFor="let course of courses">
-  <li>{{ course.name }}</li>
-</ul>
+  <ul>
+    <li *ngFor="let course of courses">
+      <div class="course_circle">
+        <p class="course_circle__normal">{{ course.dept_name.substring(0,1) }}</p>
+        <p class="course_circle__delete" (click)="deleteFavorite(course.id)">X</p>
+      </div>
 
+      <!-- <div class="course_circle" (mouseover)="changeText=true" (mouseout)="changeText=false">
+        <p *ngIf="changeText == true" (click)="deleteFavorite(course.id)">X</p>
+        <p *ngIf="changeText == false">{{ course.dept_name.substring(0,1) }}</p>
+      </div> -->
+
+      <p class="course_name">
+        {{ course.dept_code }}-{{ course.serial }} {{course.course_name}}
+      </p>
+
+      <p class="course_teacher">
+        {{course.dept_name}} — {{course.teacher}} — {{course.time}}
+      </p>
+    </li>
+  </ul>
+</div>
 
 

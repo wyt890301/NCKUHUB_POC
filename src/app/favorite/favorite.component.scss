@@ -1,14 +1,38 @@
-p {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 20px;
-}
+@import "../course-list/course-list.component.scss";
+.favorite_div{
+    height: 74%;
 
-ul {
-    vertical-align: middle;
+    .empty {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20px;
+    }
+    
+    ul {
+        margin-top:-15px;
+        margin-left:-50px;
+    
+        li{
+          margin-bottom: -14px;
+          background-color:white;
+          list-style: none;
+    
+          &:hover{
+            background-color: #eaeaf342;
+          }
 
-    li{
-        list-style: disc;
+          .course_circle{
+
+            &:hover{
+              background-color: red;
+            }
+
+            &__normal:hover{
+              display: none;
+            }
+          }
+        }
     }
 }
+
 
